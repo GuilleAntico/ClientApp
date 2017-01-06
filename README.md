@@ -1,9 +1,13 @@
 # Client App
-    Client App created with AngularJs and Express Framework.
+
+Client App created with AngularJs and Express Framework.
 ##Pre requisite
+
 * npm installed globally
 * bower installed globally
+
 ##SQL
+
 1. First create a mysql database.
 
 2. Go to `config/config_development.js`
