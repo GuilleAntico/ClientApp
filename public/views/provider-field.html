@@ -1,0 +1,19 @@
+
+<form name="newProviderForm" novalidate>
+    <div class="row form-group" ng-form="{{field}}" ng-class="{ 'has-error' : {{field}}.$dirty }">
+        <label class="col-sm-2 control-label"> Providers</label>
+        <div class="col-sm-4">
+            <input
+                    ng-model="providerName"
+                    type="text"
+                    class="form-control"
+                     />
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-default" ng-click="newProvider()">Add Provider</button>
+        </div>
+        <div class="col-sm-4 has-error" ng-show="{{field}}.$dirty">
+            <p class="control-label" > {{ field | labelCase }} is required.</p>
+        </div>
+    </div>
+</form>

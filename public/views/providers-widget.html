@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-2 providers-container">
+        <div class="col-sm-12" ng-repeat="provider in providers">
+            <div class="col-md-2">
+                <input
+                        type="checkbox"
+                        name="selectedProviders[]"
+                        ng-checked="findIdInProviders(provider.id)"
+                        ng-click="toggleProviderCheckbox(provider.id)"
+                >
+            </div>
+            <span class="col-md-5" id="provider_span_{{provider.id}}">
+                {{provider.name}}
+            </span>
+            <input class="col-md-5 provider-input" type="text" value="{{provider.name}}" id="provider_input_{{provider.id}}" ng-blur="editProvider(provider.id)">
+            <span class="col-md-4">
+                <button ng-click="showEditInput(provider.id)"><span class="glyphicon glyphicon-edit"></span></button>
+                <button ng-click="deleteProvider(provider.id)"><span class="glyphicon glyphicon-trash"></span></button>
+            </span>
+        </div>
+    </div>
+</div>

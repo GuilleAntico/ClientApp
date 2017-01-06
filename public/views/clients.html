@@ -1,0 +1,48 @@
+<div class="row table-title">
+    <div class=" text-left">
+        <h3 class="col-sm-6">Clients</h3>
+    </div>
+    <div class="col-sm-6 text-right">
+        <button class="btn btn-primary btn-sm new-client" ng-click="newClientModal()">New Client</button>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col-sm-1">
+        <label class="control-label"> Filter: </label>
+    </div>
+    <div class="col-sm-4">
+        <input type="search" class="form-control" placeholder="Search" ng-model="query">
+    </div>
+</div>
+<table class="table table-bordered table-hover table-responsive">
+    <thead>
+        <tr>
+            <th ng-repeat="field in fields" ng-click="sort(field)">
+                {{field | labelCase }}
+                <span ng-show="sort.field === field && !sort.order" class="glyphicon glyphicon-chevron-down"></span>
+                <span ng-show="sort.field === field && sort.order" class="glyphicon glyphicon-chevron-up"></span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="client in clients | orderBy: sort.field : sort.order | filter : query">
+            <td>{{ client['name'] }}</td>
+            <td>{{ client['phone'] }}</td>
+            <td>{{ client['email'] }}</td>
+            <td>{{ client['Providers'] | showOnlyNames}}</td>
+            <td class="text-center">
+                <button type="button"
+                        class="btn btn-primary btn-sm"
+                        ng-click="editClientModal(client['id'])">
+                    Edit
+                </button>
+                <button type="button"
+                        class="btn btn-danger btn-sm"
+                        ng-click="deleteClient(client['id'])">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

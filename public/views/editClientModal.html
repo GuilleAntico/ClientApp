@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h2 class="modal-title">Edit Client</h2>
+</div>
+<div class="modal-body">
+    <form name="editClientForm" novalidate class="form-horizontal">
+        <form-field record="client" field="name" required="true" type="text"></form-field>
+        <form-field record="client" field="phone" required="true" type="phone"></form-field>
+        <form-field record="client" field="email" required="true" type="email"></form-field>
+        <provider-field field="name"></provider-field>
+        <providers-widget></providers-widget>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="updateClient()">Update Client</button>
+
+    <button class="btn btn-default" ng-click="cancel()">Cancel Client</button>
+
+</div>

@@ -1,0 +1,22 @@
+{
+  "name": "angular-test",
+  "version": "1.0.0",
+  "description": "Angular Test",
+  "main": "app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node api/app.js"
+  },
+  "author": "Carlos Guillermo Antico",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bookshelf": "^0.10.2",
+    "checkit": "^0.7.0",
+    "express": "^4.14.0",
+    "knex": "^0.12.6",
+    "lodash": "^4.17.2",
+    "mysql": "^2.12.0",
+    "sequelize": "^3.28.0",
+    "sequelize-cli": "^2.5.1"
+  }
+}
